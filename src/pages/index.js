@@ -1,16 +1,17 @@
 import React from "react"
-
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import ProfileImage from "../components/images"
+// import ProfileImage from "../components/images"
 import SEO from "../components/seo"
 
-const IndexPage = ({data}) => (
+const IndexPage = (props) => (
   <Layout>
     <SEO title="Home" />
     <div>
       <div className="row">
         <div className="col-md-6">
-          <ProfileImage/>
+          <Img fluid={props.data.profileImage.childImageSharp.fluid} />
         </div>
         <div className="col-md-6">
           <h3>About Me</h3>
@@ -27,6 +28,16 @@ const IndexPage = ({data}) => (
   </Layout>
 )
 
-
-
 export default IndexPage
+
+export const pageQuery = graphql`
+  query {
+    profileImage: file(relativePath: { eq: "profile.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
