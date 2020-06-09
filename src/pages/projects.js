@@ -8,40 +8,130 @@ import styled from "styled-components"
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
+`;
+
+const ProjectList = styled.ul`
+  list-style-type: none;
+  margin: 3rem;
 `;
 
 const ProjectImgWrapper = styled.figure`
-  margin: auto;
+  position: relative;
+  margin: 6rem auto;
   width: 75%;
   max-width: 290px;
 `;
+
+const Overlay = styled.div`
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(2,2,2, 0.5);
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .2s ease;
+  ${ProjectImgWrapper}:hover & {
+    bottom: 0;
+    height: 100%;
+  }
+`;
+
+const ImgTextList = styled.ul`
+  position: absolute;
+  margin: auto 0;
+  list-style: none;
+  padding-left: 0;
+  width: 300px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);     
+`;
+
+const ImgTextItem = styled.li`
+  color: #dddddd;
+  display: inline-block;
+  font-size: 16px;
+  background-color: #313131;
+  padding: 0px 10px;
+  margin: 5px 10px;
+  border-radius: 4px;
+  opacity: 1;
+`;
+
+const ProjLinkList = styled.ul`
+  position: absolute;
+  margin: auto 0;
+  padding-left: 0;
+  top: 85%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+`;
+
+const ProjLink = styled(ImgTextItem)`
+  cursor:pointer;
+`;
+
 
 const Projects = (props) => (
   <Layout>
     <Container>
       <SEO title="Projects" />
-      <h3>Projects List</h3>
-      <ul id="project-list">
+      <ProjectList>
+
+      <div class="row-project">
+          <li class="project" id="equip">
+            <ProjectImgWrapper>
+              <Img fluid={props.data.mandalorianImage.childImageSharp.fluid} />
+              <Overlay>
+                <ImgTextList>
+                  <ImgTextItem>Javascript</ImgTextItem>
+                  <ImgTextItem>React</ImgTextItem>
+                  <ImgTextItem>Node</ImgTextItem>
+                </ImgTextList>
+                <ProjLinkList>
+                  <a href="https://github.com/ronniergz/mandalorianfansite">
+                    <ProjLink>View on Github</ProjLink>
+                  </a>
+                  <a href="https://laughing-kalam-53b26c.netlify.app/">
+                    <ProjLink>Visit Site</ProjLink>
+                  </a>
+                </ProjLinkList>
+              </Overlay>
+            </ProjectImgWrapper>
+            <div class="project-description">
+              <h3>Mandalorian Fansite</h3>
+              <p>A site dedicated to The Mandalorian TV show that includes episode and character guides. This is strictly a front end design using React components and the Reactstrap library for basic styles and positioning. </p>
+            </div>
+          </li>
+        </div>
 
         <div class="row-project">
           <li class="project" id="equip">
             <ProjectImgWrapper>
               <Img fluid={props.data.equipImage.childImageSharp.fluid} />
-              <div class="overlay">
-                <ul class="image-text">
-                  <li class="text">MongoDB</li>
-                  <li class="text">Express.js</li>
-                  <li class="text">Angular.js</li>
-                  <li class="text">Node.js</li>
-                </ul>
-                <ul class="project-links">
-                  <li class="text project-link-text" id="equip-git">View on Github</li>
-                </ul>
-              </div>
+              <Overlay>
+                <ImgTextList>
+                  <ImgTextItem>MongoDB</ImgTextItem>
+                  <ImgTextItem>Express.js</ImgTextItem>
+                  <ImgTextItem>Angular.js</ImgTextItem>
+                  <ImgTextItem>Node.js</ImgTextItem>
+                </ImgTextList>
+                <ProjLinkList>
+                  <a href="https://github.com/ronniergz/e-quip">
+                    <ProjLink>View on Github</ProjLink>
+                  </a>
+                </ProjLinkList>
+              </Overlay>
             </ProjectImgWrapper>
             <div class="project-description">
               <h3>E-quip</h3>
-              <p>Lately, I\'ve been working on building an online store for electronics and accessories utilizing Javascript and the M.E.A.N. stack.  Inventory items are stored in JSON format using MongoDB.  Users can filter, sort, and search for items while store owners can update the inventory as needed.</p>
+              <p>Lately, I've been working on building an online store for electronics and accessories utilizing Javascript and the M.E.A.N. stack.  Inventory items are stored in JSON format using MongoDB.  Users can filter, sort, and search for items while store owners can update the inventory as needed.</p>
             </div>
           </li>
         </div>
@@ -50,17 +140,18 @@ const Projects = (props) => (
           <li class="project" id="wyr">
             <ProjectImgWrapper>
             <Img fluid={props.data.wyrImage.childImageSharp.fluid} />            
-              <div class="overlay">
-                <ul class="image-text">
-                  <li class="text">HTML</li>
-                  <li class="text">CSS</li>
-                  <li class="text">PHP</li>
-                </ul>
-                <ul class="project-links">
-                  <li class="text project-link-text" id="wyr-git">View on Github</li>
-                  <li class="text project-link-text" id="wyr-site">Visit Site</li>
-                </ul>
-              </div>
+              <Overlay>
+                <ImgTextList>
+                  <ImgTextItem>HTML</ImgTextItem>
+                  <ImgTextItem>CSS</ImgTextItem>
+                  <ImgTextItem>PHP</ImgTextItem>
+                </ImgTextList>
+                <ProjLinkList>
+                  <a href="http://www.whereyarack.org/">
+                    <ProjLink>Visit Site</ProjLink>
+                  </a>
+                </ProjLinkList>
+              </Overlay>
             </ProjectImgWrapper>
             <div class="project-description">
               <h3>Where Ya' Rack</h3>
@@ -69,27 +160,8 @@ const Projects = (props) => (
           </li>
         </div>
 
-        <div class="row-project">
-          <li class="project" id="equip">
-            <ProjectImgWrapper>
-              <Img fluid={props.data.lodownImage.childImageSharp.fluid} />
-              <div class="overlay">
-                <ul class="image-text">
-                  <li class="text">Javascript</li>
-                  <li class="text">Node.js</li>
-                </ul>
-                <ul class="project-links">
-                  <li class="text project-link-text" id="lodown-git">View on Github</li>
-                </ul>
-              </div>
-            </ProjectImgWrapper>
-            <div class="project-description">
-              <h3>Lodown</h3>
-              <p>An npm functional Javascript libary.  The library utilizes built-in Javascript functions to create more useful functions for manipulating arrays of data. Module.exports object is used to expose each function as a module so the library can be used for future projects.</p>
-            </div>
-          </li>
-        </div>
-      </ul>
+
+      </ProjectList>
     </Container>
   </Layout>
 )
@@ -112,7 +184,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    lodownImage: file(relativePath: { eq: "project-image-lodown.jpg" }) {
+    mandalorianImage: file(relativePath: { eq: "project-image-mandalorian.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid

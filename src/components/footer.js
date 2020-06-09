@@ -17,8 +17,7 @@ const Social = styled.li`
 const SocialList = styled.ul`
   list-style-type: none;
   text-align: center;
-  margin: 3rem;
-
+  margin: 9rem auto 3rem auto;
 `;
 
 const Footer = (props) => {

@@ -7,24 +7,40 @@ import styled from "styled-components"
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 400px;
+  text-align: center;
+`;
+
+const BlogList = styled.ul`
+  list-style: none;
+  margin: 6rem 0;
+`;
+
+const Entry = styled.li`
+  width: 75%;
+  margin: 2rem auto;
+`;
+
+const Date = styled.p`
+  font-size: .7rem;
 `;
 
 const Blog = ({data}) => (
   <Layout>
     <Container>
       <SEO title="Blog" />
-      <h1>Latest Posts</h1>
-      <ul>
+      <BlogList>
         {data.allMarkdownRemark.edges.map(post => (
-          <li>
+          <Entry>
             <Link
               to={post.node.frontmatter.path}
               key={post.node.id}>
               {post.node.frontmatter.title}
             </Link>
-          </li>
+            <Date>{post.node.frontmatter.date}</Date>
+          </Entry>
         ))}
-      </ul>
+      </BlogList>
       </Container>
   </Layout>
 )
