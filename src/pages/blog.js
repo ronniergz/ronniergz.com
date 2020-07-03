@@ -9,20 +9,32 @@ const Container = styled.div`
   margin: 0 auto;
   min-height: 400px;
   text-align: center;
-`;
-
-const BlogList = styled.ul`
+  @media (min-width: 540px) {
+    font-size: 1.2rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+  `;
+  
+  const BlogList = styled.ul`
   list-style: none;
   margin: 6rem 0;
-`;
-
-const Entry = styled.li`
+  `;
+  
+  const Entry = styled.li`
   width: 75%;
   margin: 2rem auto;
-`;
-
-const Date = styled.p`
+  `;
+  
+  const Date = styled.p`
   font-size: .7rem;
+  @media (min-width: 540px) {
+    font-size: .8rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const Blog = ({data}) => (

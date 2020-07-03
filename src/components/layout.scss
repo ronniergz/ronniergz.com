@@ -40,13 +40,13 @@ template {
   display: none;
 }
 a {
-  color: rgb(51, 51, 51);
+  color: #466DB2;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
 a:hover {
-  color:gray;
+  color:rgb(26, 83, 182);
   outline-width: 0;
 }
 abbr[title] {
@@ -532,9 +532,7 @@ li > ul {
 blockquote *:last-child {
   margin-bottom: 0;
 }
-li *:last-child {
-  margin-bottom: 0;
-}
+
 p *:last-child {
   margin-bottom: 0;
 }

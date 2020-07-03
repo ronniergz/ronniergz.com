@@ -9,6 +9,9 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  @media (min-width: 960px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ProjectList = styled.ul`
@@ -16,11 +19,24 @@ const ProjectList = styled.ul`
   margin: 3rem;
 `;
 
+const Project = styled.li`
+  margin: 6rem auto;
+`;
+
+const Title = styled.h3`  
+  @media (min-width: 960px) {
+    font-size: 1.75rem;
+}
+
+`;
+
 const ProjectImgWrapper = styled.figure`
   position: relative;
-  margin: 6rem auto;
-  width: 75%;
+  width: 100%;
   max-width: 290px;
+  @media (min-width: 960px) {
+    max-width: 400px;
+  } 
 `;
 
 const Overlay = styled.div`
@@ -77,89 +93,120 @@ const ProjLink = styled(ImgTextItem)`
   cursor:pointer;
 `;
 
-
 const Projects = (props) => (
   <Layout>
     <Container>
       <SEO title="Projects" />
       <ProjectList>
 
-      <div class="row-project">
-          <li class="project" id="equip">
-            <ProjectImgWrapper>
-              <Img fluid={props.data.mandalorianImage.childImageSharp.fluid} />
-              <Overlay>
-                <ImgTextList>
-                  <ImgTextItem>Javascript</ImgTextItem>
-                  <ImgTextItem>React</ImgTextItem>
-                  <ImgTextItem>Node</ImgTextItem>
-                </ImgTextList>
-                <ProjLinkList>
-                  <a href="https://github.com/ronniergz/mandalorianfansite">
-                    <ProjLink>View on Github</ProjLink>
-                  </a>
-                  <a href="https://laughing-kalam-53b26c.netlify.app/">
-                    <ProjLink>Visit Site</ProjLink>
-                  </a>
-                </ProjLinkList>
-              </Overlay>
-            </ProjectImgWrapper>
-            <div class="project-description">
-              <h3>Mandalorian Fansite</h3>
-              <p>A site dedicated to The Mandalorian TV show that includes episode and character guides. This is strictly a front end design using React components and the Reactstrap library for basic styles and positioning. </p>
+        <Project>
+          <div className="row row-project">
+            <div className="project-description col-md-6 order-md-2">
+              <Title>Mandalorian Fansite</Title>
+              <p>A site dedicated to The Mandalorian TV show that includes episode and character guides and even a puzzle. It usitilzes React for the front end design using React components and the Reactstrap library for basic styles and positioning. </p>
             </div>
-          </li>
-        </div>
-
-        <div class="row-project">
-          <li class="project" id="equip">
-            <ProjectImgWrapper>
-              <Img fluid={props.data.equipImage.childImageSharp.fluid} />
-              <Overlay>
-                <ImgTextList>
-                  <ImgTextItem>MongoDB</ImgTextItem>
-                  <ImgTextItem>Express.js</ImgTextItem>
-                  <ImgTextItem>Angular.js</ImgTextItem>
-                  <ImgTextItem>Node.js</ImgTextItem>
-                </ImgTextList>
-                <ProjLinkList>
-                  <a href="https://github.com/ronniergz/e-quip">
-                    <ProjLink>View on Github</ProjLink>
-                  </a>
-                </ProjLinkList>
-              </Overlay>
-            </ProjectImgWrapper>
-            <div class="project-description">
-              <h3>E-quip</h3>
-              <p>Lately, I've been working on building an online store for electronics and accessories utilizing Javascript and the M.E.A.N. stack.  Inventory items are stored in JSON format using MongoDB.  Users can filter, sort, and search for items while store owners can update the inventory as needed.</p>
+            <div className="col-md-6 order-md-1 d-flex justify-content-center align-items-center">
+              <ProjectImgWrapper>
+                <Img fluid={props.data.mandalorianImage.childImageSharp.fluid} />
+                <Overlay>
+                  <ImgTextList>
+                    <ImgTextItem>Javascript</ImgTextItem>
+                    <ImgTextItem>React</ImgTextItem>
+                    <ImgTextItem>Node</ImgTextItem>
+                  </ImgTextList>
+                  <ProjLinkList>
+                    <a href="https://github.com/ronniergz/mandalorianfansite">
+                      <ProjLink>View on Github</ProjLink>
+                    </a>
+                    <a href="https://laughing-kalam-53b26c.netlify.app/">
+                      <ProjLink>Visit Site</ProjLink>
+                    </a>
+                  </ProjLinkList>
+                </Overlay>
+              </ProjectImgWrapper>
             </div>
-          </li>
-        </div>
+          </div>
+        </Project>
 
-        <div class="row-project">
-          <li class="project" id="wyr">
-            <ProjectImgWrapper>
-            <Img fluid={props.data.wyrImage.childImageSharp.fluid} />            
-              <Overlay>
-                <ImgTextList>
-                  <ImgTextItem>HTML</ImgTextItem>
-                  <ImgTextItem>CSS</ImgTextItem>
-                  <ImgTextItem>PHP</ImgTextItem>
-                </ImgTextList>
-                <ProjLinkList>
-                  <a href="http://www.whereyarack.org/">
-                    <ProjLink>Visit Site</ProjLink>
-                  </a>
-                </ProjLinkList>
-              </Overlay>
-            </ProjectImgWrapper>
-            <div class="project-description">
-              <h3>Where Ya' Rack</h3>
-              <p>This site was migrated from Drupal 6 and rebuilt in Wordpress.  I also created a custom plugin using PHP.  The plugin inserts a electronic sponsor form for bicycle racks and provides HTML email confirmations.  It also creates a PDF with the sponsor information, and generates an email sent to the project team.  Sponsors have the ability to pay securely via Paypal.  The organization previously relied on paper forms for bike rack and payment information.  </p>
+        <Project>
+          <div className="row row-project">
+            <div className="col-md-6 order-md-2">        
+              <Title>JChins Plumbing</Title>
+              <p>This is a Single page business information site developed for a local contractor. </p>
             </div>
-          </li>
-        </div>
+            <div className="col-md-6 order-md-1 d-flex justify-content-center align-items-center">        
+              <ProjectImgWrapper>
+                <Img fluid={props.data.jchinsImage.childImageSharp.fluid} />
+                <Overlay>
+                  <ImgTextList>
+                    <ImgTextItem>Bootstrap.js</ImgTextItem>
+                    <ImgTextItem>Node.js</ImgTextItem>
+                  </ImgTextList>
+                  <ProjLinkList>
+                    <a href="http://stealth-sandbox.xyz">
+                      <ProjLink>Visit Site</ProjLink>
+                    </a>
+                  </ProjLinkList>
+                </Overlay>
+              </ProjectImgWrapper>
+            </div>
+          </div>
+        </Project>
 
+        <Project>
+          <div className="row row-project">
+            <div className="col-md-6 order-md-2">               
+              <Title>Where Ya' Rack</Title>
+              <p>This site was migrated from Drupal 6 and rebuilt in Wordpress.  I also created a custom plugin using PHP.  The plugin inserts a electronic sponsor form for bicycle racks and provides HTML email confirmations.  It also creates a PDF with the sponsor information, and generates an email sent to the project team.  Sponsors have the ability to pay securely via Paypal.  The organization previously relied on paper forms for bike rack and
+              </p>
+            </div>
+            <div className="col-md-6 order-md-1 d-flex justify-content-center align-items-center">             
+              <ProjectImgWrapper>
+              <Img fluid={props.data.wyrImage.childImageSharp.fluid} />            
+                <Overlay>
+                  <ImgTextList>
+                    <ImgTextItem>HTML</ImgTextItem>
+                    <ImgTextItem>CSS</ImgTextItem>
+                    <ImgTextItem>PHP</ImgTextItem>
+                  </ImgTextList>
+                  <ProjLinkList>
+                    <a href="http://www.whereyarack.org/">
+                      <ProjLink>Visit Site</ProjLink>
+                    </a>
+                  </ProjLinkList>
+                </Overlay>
+              </ProjectImgWrapper>
+            </div>
+          </div>
+        </Project>
+
+
+        <Project>
+          <div className="row row-project">
+            <div className="col-md-6 order-md-2">        
+              <Title>E-quip</Title>
+              <p>I've been working on building an online store for electronics and accessories utilizing Javascript and the M.E.A.N. stack.  Inventory items are stored in JSON format using MongoDB.  Users can filter, sort, and search for items while store owners can update the inventory as needed.</p>
+            </div>
+            <div className="col-md-6 order-md-1 d-flex justify-content-center align-items-center">        
+              <ProjectImgWrapper>
+                <Img fluid={props.data.equipImage.childImageSharp.fluid} />
+                <Overlay>
+                  <ImgTextList>
+                    <ImgTextItem>MongoDB</ImgTextItem>
+                    <ImgTextItem>Express.js</ImgTextItem>
+                    <ImgTextItem>Angular.js</ImgTextItem>
+                    <ImgTextItem>Node.js</ImgTextItem>
+                  </ImgTextList>
+                  <ProjLinkList>
+                    <a href="https://github.com/ronniergz/e-quip">
+                      <ProjLink>View on Github</ProjLink>
+                    </a>
+                  </ProjLinkList>
+                </Overlay>
+              </ProjectImgWrapper>
+            </div>
+          </div>
+        </Project>
 
       </ProjectList>
     </Container>
@@ -170,23 +217,30 @@ export default Projects
 
 export const pageQuery = graphql`
   query {
+    mandalorianImage: file(relativePath: { eq: "project-image-mandalorian.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    jchinsImage: file(relativePath: { eq: "project-image-jchins.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     equipImage: file(relativePath: { eq: "project-image-equip.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 500) {
+        fluid(maxWidth: 400, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     wyrImage: file(relativePath: { eq: "project-image-wyr.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    mandalorianImage: file(relativePath: { eq: "project-image-mandalorian.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
+        fluid(maxWidth: 400, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }

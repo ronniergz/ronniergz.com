@@ -11,11 +11,31 @@ import {
   NavLink,
 } from 'reactstrap';
 
+const HeaderArea = styled.div`
+  width: 100%;
+  background-color: #1c1c1c;
+`;
+
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 `;
 
+const navLinkStyle = {
+  color: '#E0E0E0',
+  ':hover': {
+    color: '#ffffff',
+  }
+};
+
+const logoStyle = {
+  'font-size': '1.5rem', 
+  'font-family': 'Tahoma'
+}
+
+const navStyle = {
+  'color': 'white'
+}
 
 const Header = (props) => {
 
@@ -23,27 +43,27 @@ const Header = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
     return (
-      <React.Fragment>
-        <Container>
-          <Navbar light expand="sm">
-            <NavbarBrand href="/" style={{'font-size': '2rem', 'color': "black"}}>RR</NavbarBrand>
+      <HeaderArea>
+        <Container >
+          <Navbar style={{navStyle}} expand="sm" >
+            <NavbarBrand href="/" style={{logoStyle}}>Ronnie Rodriguez</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/" className="nav-link">About Me</NavLink>
+                  <NavLink href="/" >About Me</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/projects">Projects</NavLink>
+                  <NavLink href="/projects" >Projects</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/blog">Blog</NavLink>
+                  <NavLink href="/blog" >Blog</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
           </Navbar>
         </Container>
-      </React.Fragment>
+      </HeaderArea>
     )  
 
 }

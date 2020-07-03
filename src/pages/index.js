@@ -8,11 +8,14 @@ import SEO from "../components/seo"
 
 const Container = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 6rem auto;
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ProfileImgWrapper = styled.figure`
-  margin: auto;
+  margin: 4rem auto;
   width: 75%;
   max-width: 290px;
 `;
