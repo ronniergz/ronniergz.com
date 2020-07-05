@@ -21,20 +21,10 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-const navLinkStyle = {
-  color: '#E0E0E0',
-  ':hover': {
-    color: '#ffffff',
-  }
-};
-
 const logoStyle = {
-  'font-size': '1.5rem', 
-  'font-family': 'Tahoma'
-}
-
-const navStyle = {
-  'color': 'white'
+  fontSize: '1.5rem', 
+  fontFamily: '',
+  color: 'white'
 }
 
 const Header = (props) => {
@@ -45,13 +35,13 @@ const Header = (props) => {
     return (
       <HeaderArea>
         <Container >
-          <Navbar style={{navStyle}} expand="sm" >
-            <NavbarBrand href="/" style={{logoStyle}}>Ronnie Rodriguez</NavbarBrand>
+          <Navbar dark expand="sm" >
+            <NavbarBrand href="/" style={logoStyle} >Ronnie Rodriguez</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink href="/" >About Me</NavLink>
+                <NavItem >
+                  <NavLink href='/' >About Me</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="/projects" >Projects</NavLink>

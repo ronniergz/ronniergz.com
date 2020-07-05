@@ -4,22 +4,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: 400px;
-  text-align: center;
-  @media (min-width: 540px) {
-    font-size: 1.2rem;
-  }
-  @media (min-width: 768px) {
-    font-size: 1.5rem;
-  }
-  `;
-  
+ 
   const BlogList = styled.ul`
   list-style: none;
-  margin: 6rem 0;
+  margin: 0 0 6rem 0;
   `;
   
   const Entry = styled.li`
@@ -39,21 +27,27 @@ const Container = styled.div`
 
 const Blog = ({data}) => (
   <Layout>
-    <Container>
       <SEO title="Blog" />
-      <BlogList>
-        {data.allMarkdownRemark.edges.map(post => (
-          <Entry>
-            <Link
-              to={post.node.frontmatter.path}
-              key={post.node.id}>
-              {post.node.frontmatter.title}
-            </Link>
-            <Date>{post.node.frontmatter.date}</Date>
-          </Entry>
-        ))}
-      </BlogList>
-      </Container>
+      <div className="banner">
+        <div className="container">
+          <h1>My Blog</h1>
+          <h2>Latest posts live here</h2>
+        </div>
+      </div>
+      <div className="container">
+        <BlogList>
+          {data.allMarkdownRemark.edges.map(post => (
+            <Entry>
+              <Link
+                to={post.node.frontmatter.path}
+                key={post.node.id}>
+                {post.node.frontmatter.title}
+              </Link>
+              <Date>{post.node.frontmatter.date}</Date>
+            </Entry>
+          ))}
+        </BlogList>
+      </div>
   </Layout>
 )
 

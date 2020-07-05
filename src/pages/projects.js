@@ -5,22 +5,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  @media (min-width: 960px) {
-    font-size: 1.2rem;
-  }
-`;
-
 const ProjectList = styled.ul`
   list-style-type: none;
-  margin: 3rem;
+  margin: 2rem auto 3rem auto;
 `;
 
 const Project = styled.li`
-  margin: 6rem auto;
+  margin: 0 auto 6rem auto;
 `;
 
 const Title = styled.h3`  
@@ -95,8 +86,14 @@ const ProjLink = styled(ImgTextItem)`
 
 const Projects = (props) => (
   <Layout>
-    <Container>
       <SEO title="Projects" />
+      <div className="banner">
+        <div className="container">
+          <h1>My Projects</h1>
+          <h2>Here are a few of the projects I have been working on.</h2>
+        </div>
+      </div>
+      <div className="container">
       <ProjectList>
 
         <Project>
@@ -209,7 +206,7 @@ const Projects = (props) => (
         </Project>
 
       </ProjectList>
-    </Container>
+    </div>
   </Layout>
 )
 
