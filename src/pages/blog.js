@@ -4,26 +4,23 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 
- 
-  const BlogList = styled.ul`
+const BlogList = styled.ul`
   list-style: none;
   margin: 0 0 6rem 0;
-  `;
-  
-  const Entry = styled.li`
-  width: 75%;
-  margin: 2rem auto;
-  `;
-  
-  const Date = styled.p`
-  font-size: .7rem;
-  @media (min-width: 540px) {
-    font-size: .8rem;
-  }
-  @media (min-width: 768px) {
-    font-size: 1rem;
-  }
 `;
+  
+const Entry = styled.li`
+  width: 90%;
+  margin: 2rem auto;
+`;
+  
+const Date = styled.p`
+  font-size: 1rem;
+`;
+
+const postLink = {
+  fontSize: '1.5rem',
+}
 
 const Blog = ({data}) => (
   <Layout>
@@ -38,7 +35,7 @@ const Blog = ({data}) => (
         <BlogList>
           {data.allMarkdownRemark.edges.map(post => (
             <Entry>
-              <Link
+              <Link style={postLink}
                 to={post.node.frontmatter.path}
                 key={post.node.id}>
                 {post.node.frontmatter.title}

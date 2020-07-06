@@ -15,17 +15,18 @@ const Project = styled.li`
 `;
 
 const Title = styled.h3`  
+font-weight: 400;
+font-size: 2rem;
   @media (min-width: 960px) {
-    font-size: 1.75rem;
-}
-
+    font-size: 2.5rem;
+  }
 `;
 
 const ProjectImgWrapper = styled.figure`
   position: relative;
   width: 100%;
-  max-width: 290px;
-  @media (min-width: 960px) {
+  max-width: 325px;
+  @media (min-width: 670px) {
     max-width: 400px;
   } 
 `;
@@ -100,7 +101,7 @@ const Projects = (props) => (
           <div className="row row-project">
             <div className="project-description col-md-6 order-md-2">
               <Title>Mandalorian Fansite</Title>
-              <p>A site dedicated to The Mandalorian TV show that includes episode and character guides and even a puzzle. It usitilzes React for the front end design using React components and the Reactstrap library for basic styles and positioning. </p>
+              <p>A site dedicated to The Mandalorian TV show that includes episode and character guides and even a puzzle. The front end is built using React components and the Reactstrap library for basic styles and positioning. </p>
             </div>
             <div className="col-md-6 order-md-1 d-flex justify-content-center align-items-center">
               <ProjectImgWrapper>
@@ -129,7 +130,7 @@ const Projects = (props) => (
           <div className="row row-project">
             <div className="col-md-6 order-md-2">        
               <Title>JChins Plumbing</Title>
-              <p>This is a Single page business information site developed for a local contractor. </p>
+              <p>This is a single page business information site developed for a local contractor. It includes a contact form for service requests via Nodemailer. </p>
             </div>
             <div className="col-md-6 order-md-1 d-flex justify-content-center align-items-center">        
               <ProjectImgWrapper>
@@ -154,7 +155,7 @@ const Projects = (props) => (
           <div className="row row-project">
             <div className="col-md-6 order-md-2">               
               <Title>Where Ya' Rack</Title>
-              <p>This site was migrated from Drupal 6 and rebuilt in Wordpress.  I also created a custom plugin using PHP.  The plugin inserts a electronic sponsor form for bicycle racks and provides HTML email confirmations.  It also creates a PDF with the sponsor information, and generates an email sent to the project team.  Sponsors have the ability to pay securely via Paypal.  The organization previously relied on paper forms for bike rack and
+              <p>This site was migrated from Drupal 6 and rebuilt in Wordpress.  I also created a custom plugin using PHP.  The plugin inserts a electronic sponsor form for bicycle racks and provides HTML email confirmations.  It also creates a PDF with the sponsor information, and generates an email sent to the project team.  Sponsors have the ability to pay securely via Paypal.  The organization previously relied on paper forms for sponsorship.
               </p>
             </div>
             <div className="col-md-6 order-md-1 d-flex justify-content-center align-items-center">             
@@ -182,7 +183,7 @@ const Projects = (props) => (
           <div className="row row-project">
             <div className="col-md-6 order-md-2">        
               <Title>E-quip</Title>
-              <p>I've been working on building an online store for electronics and accessories utilizing Javascript and the M.E.A.N. stack.  Inventory items are stored in JSON format using MongoDB.  Users can filter, sort, and search for items while store owners can update the inventory as needed.</p>
+              <p>An online store for electronics and accessories utilizing Javascript and the M.E.A.N. stack.  Inventory items are stored in JSON format using MongoDB.  Users can filter, sort, and search for items while store owners can update the inventory as needed.</p>
             </div>
             <div className="col-md-6 order-md-1 d-flex justify-content-center align-items-center">        
               <ProjectImgWrapper>

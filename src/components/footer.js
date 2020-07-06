@@ -17,6 +17,7 @@ const Container = styled.div`
 `;
 
 const SocialList = styled.ul`
+  margin-left: 0px;
   list-style-type: none;
   text-align: center;
   padding: 9rem auto 3rem auto;
@@ -30,8 +31,15 @@ const Social = styled.li`
 const Icon = styled.a`
   color: #828282;
   :hover {
-    color: #b2b2b2;
+    color: #d1d1d1;
   }
+`;
+
+const Credit = styled.p`
+  text-align: center;
+  font-size: 0.7rem;
+  color: #828282;
+  margin: 3rem auto 0 auto;
 `;
 
 const Footer = (props) => {
@@ -56,6 +64,7 @@ const Footer = (props) => {
             </Icon>
           </Social>
         </SocialList> 
+        <Credit>© 2019 RonnieRgz. All rights reserved.</Credit>
       </Container>
     </FooterArea>
   )

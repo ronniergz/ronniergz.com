@@ -23,8 +23,16 @@ const Container = styled.div`
 
 const logoStyle = {
   fontSize: '1.5rem', 
-  fontFamily: '',
+  fontWeight: '600',
   color: 'white'
+}
+
+const itemStyle = {
+  margin: 0,
+}
+
+const linkStyle = {
+  fontWeight: '400',
 }
 
 const Header = (props) => {
@@ -40,14 +48,14 @@ const Header = (props) => {
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem >
-                  <NavLink href='/' >About Me</NavLink>
+                <NavItem style={itemStyle}>
+                  <NavLink style={linkStyle} href='/' >About Me</NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink href="/projects" >Projects</NavLink>
+                <NavItem style={itemStyle}>
+                  <NavLink style={linkStyle}  href="/projects" >Projects</NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink href="/blog" >Blog</NavLink>
+                <NavItem style={itemStyle}>
+                  <NavLink style={linkStyle} href="/blog" >Blog</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
