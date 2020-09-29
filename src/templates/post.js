@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import Layout from "../components/layout"
 import styled from "styled-components"
 
@@ -13,23 +12,37 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  margin: 1rem auto 3rem auto;
+  margin: 1rem auto 1rem auto;
   @media (min-width: 540px) {
     font-size: 3rem;
   }
 `;
 
-export default function Template({data}) {
-  const {markdownRemark: post} = data;
+const Date = styled.p`
+  font-size: 0.8rem;
+  text-align: right;
+  padding-right: 1rem;
+  @media (min-width: 540px) {
+    font-size: 0.9rem;
+  }
+`;
+
+const Post = styled.div`
+  margin-bottom: 10rem;
+
+`;
+
+
+export default function Template({ data }) {
+  const { markdownRemark: post } = data;
   // OR const post = data.markdownRemark;
   return (
     <Layout>
       <Container>
-        <div>
-          <a href="/blog">&lt; Back</a>
-          <Title>{post.frontmatter.title}</Title>
-          <div dangerouslySetInnerHTML={{__html: post.html}} />
-        </div>
+        <a href="/blog">&lt; Back</a>
+        <Title>{post.frontmatter.title}</Title>
+        <Date>{post.frontmatter.date}</Date>
+        <Post dangerouslySetInnerHTML={{ __html: post.html }} />
       </Container>
     </Layout>
   )
@@ -42,6 +55,7 @@ export const postQuery = graphql`
       frontmatter {
         path
         title
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }

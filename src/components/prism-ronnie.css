@@ -1,0 +1,18 @@
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: 0.8em;
+  
+  -moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+}
+
+pre[class*="language-"].line-numbers.line-numbers code {
+  padding-left: 1.8em;
+  margin-bottom: 2em;
+}
+
+code[class*="language-"] {
+	padding: 1em 1em;
+}
