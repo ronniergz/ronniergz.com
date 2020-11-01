@@ -122,7 +122,7 @@ const Projects = props => (
                     <a href="https://github.com/ronniergz/mandalorianfansite">
                       <ProjLink>View on Github</ProjLink>
                     </a>
-                    <a href="https://laughing-kalam-53b26c.netlify.app/">
+                    <a href="https://mandalorian-fans.netlify.app//">
                       <ProjLink>Visit Site</ProjLink>
                     </a>
                   </ProjLinkList>
