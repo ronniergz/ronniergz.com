@@ -191,7 +191,7 @@ const Projects = props => (
                     <ImgTextItem>PHP</ImgTextItem>
                   </ImgTextList>
                   <ProjLinkList>
-                    <a href="http://www.whereyarack.org/">
+                    <a href="http://www.wyr-archive.xyz/">
                       <ProjLink>Visit Site</ProjLink>
                     </a>
                   </ProjLinkList>
