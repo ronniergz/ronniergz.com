@@ -23,7 +23,7 @@ const IndexPage = (props) => (
     </div>
     <div className="container">
       <div>
-        <p> I'm a Javascript developer, and have been working in the engineering field for most of my career.  I have a degree in Electrical Engineering and my background is in instrumentation and control systems for industrial sites.  My passion is solving problems with software whether it be a large scale control system or a single page web application.</p>
+        <p> I'm a Javascript Developer, and have been working in the engineering field for most of my career.  I have a degree in Electrical Engineering and my background is in instrumentation and control systems for industrial sites.  My passion is solving problems with software whether it be a large scale control system or a single page web application.</p>
       </div>
       <div>
         <ProfileImgWrapper>
