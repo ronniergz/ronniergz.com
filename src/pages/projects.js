@@ -16,9 +16,9 @@ const Project = styled.li`
 
 const Title = styled.h3`
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.5rem;
   @media (min-width: 960px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 `
 
@@ -134,6 +134,39 @@ const Projects = props => (
 
         <Project>
           <div className="row row-project">
+            <div className="col-md-6 order-md-2">
+              <Title>Hungry Cat</Title>
+              <p>
+                A browser based platforming game developed over a week for a Mintbean hackathon.  
+                Uses the Phaser 3 framework for game rendering and arcade style physics.  Texture atlases 
+                are utilized for sprite animation and level design.  
+              </p>
+            </div>
+            <div className="col-md-6 order-md-1 d-flex justify-content-center align-items-center">
+              <ProjectImgWrapper>
+                <Img fluid={props.data.hungryCatImage.childImageSharp.fluid} />
+                <Overlay>
+                  <ImgTextList>
+                    <ImgTextItem>Phaser.io</ImgTextItem>
+                    <ImgTextItem>Express.js</ImgTextItem>
+                    <ImgTextItem>Node.js</ImgTextItem>
+                  </ImgTextList>
+                  <ProjLinkList>
+                    <a href="https://github.com/ronniergz/hungryCat">
+                      <ProjLink>View on Github</ProjLink>
+                    </a>
+                    <a href="https://blooming-headland-49687.herokuapp.com/">
+                      <ProjLink>Visit Site</ProjLink>
+                    </a>
+                  </ProjLinkList>
+                </Overlay>
+              </ProjectImgWrapper>
+            </div>
+          </div>
+        </Project>        
+
+        <Project>
+          <div className="row row-project">
             <div className="project-description col-md-6 order-md-2">
               <Title>Stock Analyzer</Title>
               <p>
@@ -230,37 +263,8 @@ const Projects = props => (
           </div>
         </Project>
 
-        <Project>
-          <div className="row row-project">
-            <div className="col-md-6 order-md-2">
-              <Title>E-quip</Title>
-              <p>
-                An online store for electronics and accessories utilizing
-                Javascript and the M.E.A.N. stack. Inventory items are stored in
-                JSON format using MongoDB. Users can filter, sort, and search
-                for items while store owners can update the inventory as needed.
-              </p>
-            </div>
-            <div className="col-md-6 order-md-1 d-flex justify-content-center align-items-center">
-              <ProjectImgWrapper>
-                <Img fluid={props.data.equipImage.childImageSharp.fluid} />
-                <Overlay>
-                  <ImgTextList>
-                    <ImgTextItem>MongoDB</ImgTextItem>
-                    <ImgTextItem>Express.js</ImgTextItem>
-                    <ImgTextItem>Angular.js</ImgTextItem>
-                    <ImgTextItem>Node.js</ImgTextItem>
-                  </ImgTextList>
-                  <ProjLinkList>
-                    <a href="https://github.com/ronniergz/e-quip">
-                      <ProjLink>View on Github</ProjLink>
-                    </a>
-                  </ProjLinkList>
-                </Overlay>
-              </ProjectImgWrapper>
-            </div>
-          </div>
-        </Project>
+
+
       </ProjectList>
     </div>
   </Layout>
@@ -295,7 +299,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    equipImage: file(relativePath: { eq: "project-image-equip.jpg" }) {
+    hungryCatImage: file(relativePath: { eq: "project-image-hungryCat.png" }) {
       childImageSharp {
         fluid(maxWidth: 400, quality: 100) {
           ...GatsbyImageSharpFluid

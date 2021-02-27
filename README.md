@@ -1,8 +1,3 @@
-
-<h1 align="center">
-  RonnieRGZ.com
-</h1>
+## RonnieRGZ.com
 
 Portfolio Site Developed using Gatsby and React Components.
-
-
