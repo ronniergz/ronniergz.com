@@ -306,7 +306,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    wyrImage: file(relativePath: { eq: "project-image-wyr.jpg" }) {
+    wyrImage: file(relativePath: { eq: "project-image-wyr.png" }) {
       childImageSharp {
         fluid(maxWidth: 400, quality: 100) {
           ...GatsbyImageSharpFluid
