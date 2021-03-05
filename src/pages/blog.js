@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
-import { Media } from "reactstrap"
 
 const BlogList = styled.ul`
   list-style: none;

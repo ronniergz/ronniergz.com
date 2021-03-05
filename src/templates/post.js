@@ -7,7 +7,7 @@ const Container = styled.div`
   margin: 2rem auto;
   padding: 0 2rem;
   @media (min-width: 768px) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 `;
 
