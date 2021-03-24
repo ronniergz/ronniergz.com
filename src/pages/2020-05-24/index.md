@@ -3,6 +3,7 @@ path: "/Wordpress-Docker"
 title: "Wordpress development using Docker"
 published: true
 date: "2020-05-24"
+comments: true
 ---
 
 <div style="margin: 2rem auto;">

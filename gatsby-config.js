@@ -79,10 +79,10 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-            `Nunito`
+          `Nunito`
         ],
       },
-      
+
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -99,6 +99,12 @@ module.exports = {
           "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `ronniergz-com`
+      }
     },
 
   ],

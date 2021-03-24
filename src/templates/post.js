@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from "../components/layout"
 import styled from "styled-components"
+import { Disqus } from 'gatsby-plugin-disqus';
 
 const Container = styled.div`
   max-width: 920px;
@@ -35,7 +36,11 @@ const Post = styled.div`
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data;
-  // OR const post = data.markdownRemark;
+  let disqusConfig = {
+    url: post.frontmatter.path,
+    identifier: post.frontmatter.date,
+    title: post.frontmatter.title,
+  }
   return (
     <Layout>
       <Container>
@@ -43,6 +48,9 @@ export default function Template({ data }) {
         <Title>{post.frontmatter.title}</Title>
         <Date>{post.frontmatter.date}</Date>
         <Post dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Disqus
+          config={disqusConfig}
+        />
       </Container>
     </Layout>
   )
