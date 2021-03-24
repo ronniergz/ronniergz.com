@@ -36,11 +36,6 @@ const Post = styled.div`
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data;
-  let disqusConfig = {
-    url: post.frontmatter.path,
-    identifier: post.frontmatter.date,
-    title: post.frontmatter.title,
-  }
   return (
     <Layout>
       <Container>
@@ -49,7 +44,9 @@ export default function Template({ data }) {
         <Date>{post.frontmatter.date}</Date>
         <Post dangerouslySetInnerHTML={{ __html: post.html }} />
         <Disqus
-          config={disqusConfig}
+          url={`${config.siteUrl}${location.pathname}`}
+          identifier={post.frontmatter.date}
+          title={post.frontmatter.title}
         />
       </Container>
     </Layout>
