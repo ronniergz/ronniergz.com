@@ -1,3 +1,4 @@
+const { config } = require("dotenv")
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`
@@ -6,8 +7,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `ronniergz.com`,
-    description: `portfolio site`,
+    description: `Gatsby Site`,
     author: `Ronnie Rodriguez`,
+    siteUrl: 'https://www.ronniergz.com',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

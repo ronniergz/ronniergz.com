@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from "../components/layout"
 import styled from "styled-components"
+import { graphql } from 'gatsby'
 import { Disqus } from 'gatsby-plugin-disqus';
 
 const Container = styled.div`
@@ -35,7 +36,9 @@ const Post = styled.div`
 
 
 export default function Template({ data }) {
+  //console.log(`${config.siteUrl}${location.pathname}`);
   const { markdownRemark: post } = data;
+  let pageUrl = 'https://ronniergz.com' + post.frontmatter.path
   return (
     <Layout>
       <Container>
@@ -44,7 +47,7 @@ export default function Template({ data }) {
         <Date>{post.frontmatter.date}</Date>
         <Post dangerouslySetInnerHTML={{ __html: post.html }} />
         <Disqus
-          url={`${config.siteUrl}${location.pathname}`}
+          url={pageUrl}
           identifier={post.frontmatter.date}
           title={post.frontmatter.title}
         />
