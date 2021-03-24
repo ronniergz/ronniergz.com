@@ -34,11 +34,28 @@ const Post = styled.div`
 
 `;
 
+const Comments = (props) => {  // check to see if comments are enabled for post
+  let pageUrl = 'https://ronniergz.com' + props.path;
+  if (props.enable === true) {
+    console.log('comments enabled');
+    return (
+      <Disqus
+        url={pageUrl}
+        identifier={props.date}
+        title={props.title}
+      />
+    )
+  } else {
+    console.log('comments disabled');
+    return (
+      <div />
+    );
+  }
+}
 
 export default function Template({ data }) {
-  //console.log(`${config.siteUrl}${location.pathname}`);
   const { markdownRemark: post } = data;
-  let pageUrl = 'https://ronniergz.com' + post.frontmatter.path
+
   return (
     <Layout>
       <Container>
@@ -46,11 +63,14 @@ export default function Template({ data }) {
         <Title>{post.frontmatter.title}</Title>
         <Date>{post.frontmatter.date}</Date>
         <Post dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Disqus
-          url={pageUrl}
+
+        <Comments
+          enable={post.frontmatter.comments}
+          path={post.frontmatter.path}
           identifier={post.frontmatter.date}
           title={post.frontmatter.title}
         />
+
       </Container>
     </Layout>
   )
@@ -64,6 +84,7 @@ export const postQuery = graphql`
         path
         title
         date(formatString: "MMMM DD, YYYY")
+        comments
       }
     }
   }

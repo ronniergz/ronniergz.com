@@ -3,6 +3,7 @@ path: "/Nginx-server-blocks"
 title: "Hosting Multiple Domains on One Server Using Nginx"
 published: true
 date: "2019-11-30"
+comments: true
 ---
 
 <div style="margin: 2rem auto;">

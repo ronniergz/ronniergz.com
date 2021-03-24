@@ -3,6 +3,7 @@ path: "/Local-Storage"
 title: "Persisting Data with Local Storage"
 published: true
 date: "2019-01-23"
+comments: true
 ---
 
 <div style="margin: 2rem auto;">
